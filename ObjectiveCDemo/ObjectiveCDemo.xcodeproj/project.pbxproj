@@ -81,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E73B2E419AC063600EF4A56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E8A239219ABCF29000373DE /* GitHub */,
+				4E73B2E519AC065F00EF4A56 /* MockData */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4E73B2E519AC065F00EF4A56 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				4E8A238E19ABC1B8000373DE /* MockSearch.json */,
+			);
+			name = MockData;
+			sourceTree = "<group>";
+		};
 		4E8A235D19ABABDB000373DE = {
 			isa = PBXGroup;
 			children = (
@@ -102,16 +119,15 @@
 		4E8A236819ABABDB000373DE /* ObjectiveCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4E73B2E419AC063600EF4A56 /* Model */,
 				4EF8CBA519AC052800E0A9C6 /* MyRepos */,
 				4EF8CBA919AC054B00E0A9C6 /* MyFollowers */,
-				4E8A239219ABCF29000373DE /* GitHub */,
 				4EF8CB9D19ABEC7E00E0A9C6 /* SearchResults */,
 				4E8A237019ABABDB000373DE /* ViewController.h */,
 				4E8A237119ABABDB000373DE /* ViewController.m */,
-				4E8A237619ABABDB000373DE /* Images.xcassets */,
 				4E8A236919ABABDB000373DE /* Supporting Files */,
+				4E8A237619ABABDB000373DE /* Images.xcassets */,
 				4E8A237319ABABDB000373DE /* Main.storyboard */,
-				4E8A238E19ABC1B8000373DE /* MockSearch.json */,
 				4E8A236D19ABABDB000373DE /* AppDelegate.h */,
 				4E8A236E19ABABDB000373DE /* AppDelegate.m */,
 			);

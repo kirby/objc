@@ -10,4 +10,12 @@
 
 @interface GitHubMyFollowers : NSObject
 
+@property (readonly) NSString *login;
+@property (readonly) NSString *html_url;
+
+-(id)init;
+-(id)initWith:(NSString *)login andHTMLURL:(NSString *)html_url;
+
++(NSMutableArray *)parseWithData:(NSData *)data;
+
 @end

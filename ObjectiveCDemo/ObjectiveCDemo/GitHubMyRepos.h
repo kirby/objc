@@ -10,4 +10,13 @@
 
 @interface GitHubMyRepos : NSObject
 
+@property (readonly) NSString *name;
+@property (readonly) NSString *desc;
+@property (readonly) NSString *html_url;
+
+-(id)init;
+-(id)initWith:(NSString *)name andDescription:(NSString *)desc andHTMLURL:(NSString *)html_url;
+
++(NSMutableArray *)parseWithData:(NSData *)data;
+
 @end
