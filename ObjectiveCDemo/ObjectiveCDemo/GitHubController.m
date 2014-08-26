@@ -45,4 +45,42 @@
     }] resume];
 }
 
+-(void)fetchMyRepos:(NSString *)token completion:(void (^)(NSMutableArray *))completion {
+    NSURL *url = [[NSURL alloc] initWithString:_searchEndpoint];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@", error.localizedDescription);
+        } else {
+            if ([(NSHTTPURLResponse *)response statusCode] != 200) {
+                NSLog(@"Bad Status Code");
+            } else {
+                completion([GitHubSearchResult parseWithData:data]);
+            }
+        }
+    }] resume];
+}
+
+-(void)fetchMyFollowers:(NSString *)token completion:(void (^)(NSMutableArray *))completion {
+    NSURL *url = [[NSURL alloc] initWithString:_searchEndpoint];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    
+    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@", error.localizedDescription);
+        } else {
+            if ([(NSHTTPURLResponse *)response statusCode] != 200) {
+                NSLog(@"Bad Status Code");
+            } else {
+                completion([GitHubSearchResult parseWithData:data]);
+            }
+        }
+    }] resume];
+}
+
 @end

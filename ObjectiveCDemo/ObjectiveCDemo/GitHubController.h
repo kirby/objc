@@ -14,5 +14,7 @@
 
 -(id)init;
 -(void)search:(NSString *)q completion:(void (^)(NSMutableArray *results))completion;
+-(void)fetchMyRepos:(NSString *)token completion:(void (^)(NSMutableArray *results))completion;
+-(void)fetchMyFollowers:(NSString *)token completion:(void (^)(NSMutableArray *results))completion;
 
 @end

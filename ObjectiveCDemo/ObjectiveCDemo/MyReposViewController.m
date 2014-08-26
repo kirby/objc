@@ -7,9 +7,15 @@
 //
 
 #import "MyReposViewController.h"
+#import "GitHubController.h"
+#import "GitHubMyRepos.h"
 
-@interface MyReposViewController ()
-
+@interface MyReposViewController ()<UITableViewDataSource>
+{
+    GitHubController *gitHubController;
+    NSMutableArray *gitHubSearchResults;
+    __weak IBOutlet UITableView *tableView;
+}
 @end
 
 @implementation MyReposViewController
@@ -17,6 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    gitHubController = [[GitHubController alloc] init];
+    gitHubSearchResults = [[NSMutableArray alloc] init];
+    
+    [gitHubController fetchMyRepos:@"TOKEN" completion:^(NSMutableArray *results) {
+        gitHubSearchResults = results;
+        [tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +37,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return gitHubSearchResults.count;
 }
-*/
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyReposCell"];
+    
+    GitHubMyRepos *result = [gitHubSearchResults objectAtIndex:indexPath.row];
+    cell.textLabel.text = result.name;
+    
+    return cell;
+}
 
 @end

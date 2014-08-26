@@ -58,7 +58,7 @@
         <!--My Followers-->
         <scene sceneID="52a-hY-QGE">
             <objects>
-                <viewController title="My Followers" id="Jq6-Yy-fDm" sceneMemberID="viewController">
+                <viewController title="My Followers" id="Jq6-Yy-fDm" customClass="MyFollowersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEd-Qv-kDh"/>
                         <viewControllerLayoutGuide type="bottom" id="SSH-CX-cjE"/>
@@ -89,6 +89,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KDF-D2-HXr" secondAttribute="trailing" id="xYK-vD-2FP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="KDF-D2-HXr" id="kOr-mC-Tf9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB6-BG-Agl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +100,7 @@
         <!--My Repos-->
         <scene sceneID="9j4-37-VkY">
             <objects>
-                <viewController title="My Repos" id="gYU-kg-fqW" sceneMemberID="viewController">
+                <viewController title="My Repos" id="gYU-kg-fqW" customClass="MyReposViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i2h-MZ-01B"/>
                         <viewControllerLayoutGuide type="bottom" id="vba-93-jIO"/>
@@ -128,6 +131,9 @@
                             <constraint firstItem="ceT-Q6-93l" firstAttribute="leading" secondItem="UWf-YF-ecV" secondAttribute="leadingMargin" id="r8g-aN-syB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ceT-Q6-93l" id="30b-Nz-pYE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJb-Yd-hST" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
