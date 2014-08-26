@@ -58,7 +58,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"selected tableview row is %ld",(long)indexPath.row);
+//    NSLog(@"selected tableview row is %ld",(long)indexPath.row);
     
     [self performSegueWithIdentifier:segues[indexPath.row] sender:self];
 

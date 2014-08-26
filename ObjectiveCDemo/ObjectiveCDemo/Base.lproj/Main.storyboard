@@ -66,7 +66,28 @@
                     <view key="view" contentMode="scaleToFill" id="azJ-y6-c3P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KDF-D2-HXr">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFollowersCell" id="CVO-z3-KX6">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CVO-z3-KX6" id="zJE-it-siW">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KDF-D2-HXr" firstAttribute="leading" secondItem="azJ-y6-c3P" secondAttribute="leadingMargin" id="FG1-ul-vI2"/>
+                            <constraint firstItem="KDF-D2-HXr" firstAttribute="top" secondItem="azJ-y6-c3P" secondAttribute="topMargin" id="QI3-6D-n4c"/>
+                            <constraint firstItem="SSH-CX-cjE" firstAttribute="top" secondItem="KDF-D2-HXr" secondAttribute="bottom" id="S5L-3H-gv2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KDF-D2-HXr" secondAttribute="trailing" id="xYK-vD-2FP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fB6-BG-Agl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,7 +105,28 @@
                     <view key="view" contentMode="scaleToFill" id="UWf-YF-ecV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-Q6-93l">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyReposCell" id="X6O-Za-x43">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6O-Za-x43" id="hfk-mx-daL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vba-93-jIO" firstAttribute="top" secondItem="ceT-Q6-93l" secondAttribute="bottom" id="RmZ-78-gaR"/>
+                            <constraint firstItem="ceT-Q6-93l" firstAttribute="top" secondItem="UWf-YF-ecV" secondAttribute="topMargin" id="cre-g8-X9v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ceT-Q6-93l" secondAttribute="trailing" id="ghy-J7-oup"/>
+                            <constraint firstItem="ceT-Q6-93l" firstAttribute="leading" secondItem="UWf-YF-ecV" secondAttribute="leadingMargin" id="r8g-aN-syB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJb-Yd-hST" userLabel="First Responder" sceneMemberID="firstResponder"/>

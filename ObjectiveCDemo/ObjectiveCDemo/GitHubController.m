@@ -25,7 +25,7 @@
 
 -(void)search:(NSString *)q completion:(void (^)(NSMutableArray *))completion {
     
-    NSLog(@"search with hardcoded string");
+//    NSLog(@"search with hardcoded string");
     
     NSURL *url = [[NSURL alloc] initWithString:_searchEndpoint];
     
