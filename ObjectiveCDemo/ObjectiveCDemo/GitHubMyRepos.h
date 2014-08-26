@@ -1,0 +1,13 @@
+//
+//  GitHubMyRepos.h
+//  ObjectiveCDemo
+//
+//  Created by Kirby Shabaga on 8/25/14.
+//  Copyright (c) 2014 Worxly. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface GitHubMyRepos : NSObject
+
+@end

@@ -9,5 +9,8 @@
 #ifndef ObjectiveCDemo_Constants_h
 #define ObjectiveCDemo_Constants_h
 
+#define CLIENT_ID       @""
+#define CLIENT_SECRET   @""
+#define CALLBACK_URL    @""
 
 #endif
