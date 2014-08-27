@@ -14,11 +14,12 @@
     self = [super init];
     return self;
 }
--(id)initWith:(NSString *)login andAvatarURL:(NSString *)avatarURL {
+-(id)initWith:(NSString *)login andAvatarURL:(NSString *)avatarURL andHtmlURL:(NSString *)htmlURL {
     self = [super init];
     if (self) {
         _login = login;
         _avatarURL = avatarURL;
+        _htmlURL = htmlURL;
     }
     return self;
 }
@@ -43,10 +44,11 @@
     for (NSDictionary *item in items) {
         NSString *login = [item objectForKey:@"login"];
         NSString *avatarURL = [item objectForKey:@"avatar_url"];
+        NSString *htmlURL = [item objectForKey:@"html_url"];
         
 //        NSLog(@"%@", avatarURL);
         
-        GitHubUserSearch *result = [[GitHubUserSearch alloc] initWith:login andAvatarURL:avatarURL];
+        GitHubUserSearch *result = [[GitHubUserSearch alloc] initWith:login andAvatarURL:avatarURL andHtmlURL:htmlURL];
         
         [results addObject:result];
     }

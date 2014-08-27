@@ -119,6 +119,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="RIR-17-Kky" id="U0n-id-Cln"/>
+                                    <outlet property="delegate" destination="RIR-17-Kky" id="LVT-XO-mN1"/>
                                 </connections>
                             </collectionView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-7H-xHS">
@@ -143,11 +144,45 @@
                     <connections>
                         <outlet property="collectionView" destination="iKH-Go-3d1" id="w9q-5c-WUI"/>
                         <outlet property="searchBar" destination="C2A-7H-xHS" id="dL5-lU-FA3"/>
+                        <segue destination="epD-ta-cnh" kind="show" identifier="ShowGitHubWeb" id="Yde-2e-CGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRA-xI-LPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="1221"/>
+        </scene>
+        <!--GitHub Web-->
+        <scene sceneID="973-DO-guQ">
+            <objects>
+                <viewController title="GitHub Web" id="epD-ta-cnh" customClass="GitHubWebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sn1-fI-cAs"/>
+                        <viewControllerLayoutGuide type="bottom" id="t6K-q0-jIZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F6o-ek-DSb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXy-1j-TPH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PXy-1j-TPH" secondAttribute="trailing" id="Ffr-UW-O9K"/>
+                            <constraint firstItem="PXy-1j-TPH" firstAttribute="top" secondItem="Sn1-fI-cAs" secondAttribute="bottom" id="h8x-ZX-wnd"/>
+                            <constraint firstAttribute="bottom" secondItem="PXy-1j-TPH" secondAttribute="bottom" id="ixh-e7-Cbk"/>
+                            <constraint firstItem="PXy-1j-TPH" firstAttribute="leading" secondItem="F6o-ek-DSb" secondAttribute="leading" id="zjR-6f-AYz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PXy-1j-TPH" id="CtA-ju-Cqo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E15-A1-lyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="2024"/>
         </scene>
         <!--My Followers-->
         <scene sceneID="52a-hY-QGE">

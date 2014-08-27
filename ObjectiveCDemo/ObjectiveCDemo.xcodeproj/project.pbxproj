@@ -20,6 +20,7 @@
 		4E8A239119ABC588000373DE /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A239019ABC588000373DE /* SearchResultsViewController.m */; };
 		4E8A239519ABCFA8000373DE /* GitHubController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A239419ABCFA8000373DE /* GitHubController.m */; };
 		4E8A239819ABD1BC000373DE /* GitHubSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A239719ABD1BC000373DE /* GitHubSearchResult.m */; };
+		4EBE64D819AE9B3A00AC8015 /* GitHubWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE64D719AE9B3A00AC8015 /* GitHubWebViewController.m */; };
 		4EF8CBA019ABFD7100E0A9C6 /* GitHubMyRepos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */; };
 		4EF8CBA319ABFD7D00E0A9C6 /* GitHubMyFollowers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CBA219ABFD7D00E0A9C6 /* GitHubMyFollowers.m */; };
 		4EF8CBA819AC054300E0A9C6 /* MyReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CBA719AC054300E0A9C6 /* MyReposViewController.m */; };
@@ -63,6 +64,8 @@
 		4E8A239419ABCFA8000373DE /* GitHubController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubController.m; sourceTree = "<group>"; };
 		4E8A239619ABD1BC000373DE /* GitHubSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubSearchResult.h; sourceTree = "<group>"; };
 		4E8A239719ABD1BC000373DE /* GitHubSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubSearchResult.m; sourceTree = "<group>"; };
+		4EBE64D619AE9B3A00AC8015 /* GitHubWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubWebViewController.h; sourceTree = "<group>"; };
+		4EBE64D719AE9B3A00AC8015 /* GitHubWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubWebViewController.m; sourceTree = "<group>"; };
 		4EF8CB9E19ABFD7100E0A9C6 /* GitHubMyRepos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubMyRepos.h; sourceTree = "<group>"; };
 		4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubMyRepos.m; sourceTree = "<group>"; };
 		4EF8CBA119ABFD7D00E0A9C6 /* GitHubMyFollowers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubMyFollowers.h; sourceTree = "<group>"; };
@@ -95,10 +98,12 @@
 		4E5584A919AE6BA400E16E6C /* SearchUsers */ = {
 			isa = PBXGroup;
 			children = (
-				4E5584AA19AE6D3600E16E6C /* UserCollectionViewCell.h */,
-				4E5584AB19AE6D3600E16E6C /* UserCollectionViewCell.m */,
 				4E5584A619AE6B9F00E16E6C /* SearchUsersViewController.h */,
 				4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */,
+				4E5584AA19AE6D3600E16E6C /* UserCollectionViewCell.h */,
+				4E5584AB19AE6D3600E16E6C /* UserCollectionViewCell.m */,
+				4EBE64D619AE9B3A00AC8015 /* GitHubWebViewController.h */,
+				4EBE64D719AE9B3A00AC8015 /* GitHubWebViewController.m */,
 			);
 			name = SearchUsers;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EBE64D819AE9B3A00AC8015 /* GitHubWebViewController.m in Sources */,
 				4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */,
 				4E5584AF19AE6EC600E16E6C /* GitHubUserSearch.m in Sources */,
 				4EF8CBA819AC054300E0A9C6 /* MyReposViewController.m in Sources */,

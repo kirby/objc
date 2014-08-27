@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UserCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
+
+@property (weak, nonatomic) NSString *htmlURL;
 
 @end

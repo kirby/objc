@@ -12,9 +12,10 @@
 
 @property (readonly) NSString *login;
 @property (readonly) NSString *avatarURL;
+@property (readonly) NSString *htmlURL;
 
 -(id)init;
--(id)initWith:(NSString *)login andAvatarURL:(NSString *)avatarURL;
+-(id)initWith:(NSString *)login andAvatarURL:(NSString *)avatarURL andHtmlURL:(NSString *)htmlURL;
 
 +(NSMutableArray *)parseWithData:(NSData *)data;
 

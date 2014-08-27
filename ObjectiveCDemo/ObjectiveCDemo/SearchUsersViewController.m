@@ -10,8 +10,9 @@
 #import "GitHubController.h"
 #import "GitHubUserSearch.h"
 #import "UserCollectionViewCell.h"
+#import "GitHubWebViewController.h"
 
-@interface SearchUsersViewController () <UICollectionViewDataSource, UISearchBarDelegate>
+@interface SearchUsersViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 {
     GitHubController *gitHubController;
     NSMutableArray *gitHubResults;
@@ -56,16 +57,46 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UserCell" forIndexPath:indexPath];
     
+    // Configure the cell
+    long currentTag = cell.tag + 1;
+    cell.tag = currentTag;
+    
     GitHubUserSearch *result = [gitHubResults objectAtIndex:indexPath.row];
+    
     cell.loginLabel.text = result.login;
+    cell.htmlURL = result.htmlURL;
     
     [gitHubController fetchAvatar:result.avatarURL completion:^(UIImage *image) {
-        cell.imageView.image = image;
-        [cell setNeedsDisplay];
+        if (cell.tag == currentTag) {
+            cell.imageView.image = image;
+            [cell setNeedsDisplay];
+        }
     }];
     
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"ShowGitHubWeb" sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    GitHubUserSearch *user = [gitHubResults objectAtIndex:indexPath.row];
+    
+    GitHubWebViewController *vc = segue.destinationViewController;
+    UserCollectionViewCell *selectedCell = (UserCollectionViewCell *)sender;
+    NSIndexPath *indexPath = [_collectionView indexPathForCell:selectedCell];
+    GitHubUserSearch *user = [gitHubResults objectAtIndex:indexPath.row];
+    vc.url = user.htmlURL;
+    
+    /*
+        let photoVC = segue.destinationViewController as PhotoViewController
+        var selectedCell = sender as PhotoCell
+        var indexPath = self.collectionView.indexPathForCell(selectedCell)
+        photoVC.asset = self.photoAssets![indexPath.item] as PHAsset
+     */
+    
+}
 
 @end
