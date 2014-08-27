@@ -26,7 +26,9 @@ NSString * const kGitHubAuthorizationHeader = @"Authorization";
 NSString * const kGitHubAuthorizationHeaderValue = @"token %@";
 
 // Endpoints
-NSString * const kGitHubSearchURL = @"https://api.github.com/search/repositories?q=%@+language:Swift&sort=stars&order=desc";
+NSString * const kGitHubSearchRepositoriesURL = @"https://api.github.com/search/repositories?q=%@+language:Swift&sort=stars&order=desc";
+NSString * const kGitHubSearchUsersURL = @"https://api.github.com/search/users?q=%@";
+
 NSString * const kGitHubReposURL = @"https://api.github.com/user/repos";
 
 @implementation Constants

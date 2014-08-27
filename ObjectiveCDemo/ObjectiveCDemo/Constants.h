@@ -27,7 +27,9 @@ extern NSString * const kGitHubAuthorizationHeader;
 extern NSString * const kGitHubAuthorizationHeaderValue;
 
 // Endpoints
-extern NSString * const kGitHubSearchURL;
+extern NSString * const kGitHubSearchRepositoriesURL;
+extern NSString * const kGitHubSearchUsersURL;
+
 extern NSString * const kGitHubReposURL;
 
 @end

@@ -40,6 +40,7 @@
     [endpoints addObject: @"My Repos"];
     [endpoints addObject: @"My Followers"];
     [endpoints addObject: @"Search"];
+    [endpoints addObject: @"Search Users"];
 }
 
 -(void)setupSegues {
@@ -47,6 +48,7 @@
     [segues addObject:@"ShowMyRepos"];
     [segues addObject:@"ShowMyFollowers"];
     [segues addObject:@"ShowSearchResults"];
+    [segues addObject:@"ShowSearchUsers"];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

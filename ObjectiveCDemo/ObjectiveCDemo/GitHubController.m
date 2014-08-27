@@ -118,7 +118,7 @@
     
 //    NSLog(@"search with hardcoded string");
     
-    NSURL *url = [[NSURL alloc] initWithString: [NSString stringWithFormat:kGitHubSearchURL, query]];
+    NSURL *url = [[NSURL alloc] initWithString: [NSString stringWithFormat:kGitHubSearchRepositoriesURL, query]];
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     

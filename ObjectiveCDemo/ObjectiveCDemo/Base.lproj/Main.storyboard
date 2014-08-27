@@ -49,11 +49,61 @@
                         <segue destination="1hu-ZQ-acb" kind="show" identifier="ShowSearchResults" id="eqw-ko-v4A"/>
                         <segue destination="gYU-kg-fqW" kind="show" identifier="ShowMyRepos" id="sbF-TY-fQW"/>
                         <segue destination="Jq6-Yy-fDm" kind="show" identifier="ShowMyFollowers" id="edi-b7-0mZ"/>
+                        <segue destination="RIR-17-Kky" kind="show" identifier="ShowSearchUsers" id="7N7-t7-2yq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1300" y="309"/>
+        </scene>
+        <!--User Search-->
+        <scene sceneID="0TJ-se-7kU">
+            <objects>
+                <viewController title="User Search" id="RIR-17-Kky" customClass="SearchUsersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikV-2b-3YV"/>
+                        <viewControllerLayoutGuide type="bottom" id="uGr-fp-CZ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dzx-tw-kfs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-Go-3d1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5W6-4X-nkL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserCell" id="ceu-06-fRP">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iKH-Go-3d1" secondAttribute="trailing" id="5SD-GM-Wm6"/>
+                            <constraint firstItem="iKH-Go-3d1" firstAttribute="leading" secondItem="dzx-tw-kfs" secondAttribute="leading" id="AJm-AN-49y"/>
+                            <constraint firstItem="iKH-Go-3d1" firstAttribute="top" secondItem="dzx-tw-kfs" secondAttribute="top" id="d87-xG-kQ8"/>
+                            <constraint firstItem="uGr-fp-CZ7" firstAttribute="top" secondItem="iKH-Go-3d1" secondAttribute="bottom" id="zNg-3Y-KI4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="iKH-Go-3d1" id="w9q-5c-WUI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRA-xI-LPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="1221"/>
         </scene>
         <!--My Followers-->
         <scene sceneID="52a-hY-QGE">

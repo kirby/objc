@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584A419AD1B8A00E16E6C /* Constants.m */; };
+		4E5584A819AE6B9F00E16E6C /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */; };
 		4E8A236C19ABABDB000373DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236B19ABABDB000373DE /* main.m */; };
 		4E8A236F19ABABDB000373DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236E19ABABDB000373DE /* AppDelegate.m */; };
 		4E8A237219ABABDB000373DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A237119ABABDB000373DE /* ViewController.m */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		4E5584A419AD1B8A00E16E6C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		4E5584A619AE6B9F00E16E6C /* SearchUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersViewController.h; sourceTree = "<group>"; };
+		4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
 		4E8A236619ABABDB000373DE /* ObjectiveCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8A236A19ABABDB000373DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8A236B19ABABDB000373DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E5584A919AE6BA400E16E6C /* SearchUsers */ = {
+			isa = PBXGroup;
+			children = (
+				4E5584A619AE6B9F00E16E6C /* SearchUsersViewController.h */,
+				4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */,
+			);
+			name = SearchUsers;
+			sourceTree = "<group>";
+		};
 		4E73B2E419AC063600EF4A56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +138,7 @@
 				4EF8CBA519AC052800E0A9C6 /* MyRepos */,
 				4EF8CBA919AC054B00E0A9C6 /* MyFollowers */,
 				4EF8CB9D19ABEC7E00E0A9C6 /* SearchResults */,
+				4E5584A919AE6BA400E16E6C /* SearchUsers */,
 				4E8A237019ABABDB000373DE /* ViewController.h */,
 				4E8A237119ABABDB000373DE /* ViewController.m */,
 				4E8A236919ABABDB000373DE /* Supporting Files */,
@@ -310,6 +323,7 @@
 				4E8A239519ABCFA8000373DE /* GitHubController.m in Sources */,
 				4EF8CBAC19AC055E00E0A9C6 /* MyFollowersViewController.m in Sources */,
 				4E8A239819ABD1BC000373DE /* GitHubSearchResult.m in Sources */,
+				4E5584A819AE6B9F00E16E6C /* SearchUsersViewController.m in Sources */,
 				4EF8CBA019ABFD7100E0A9C6 /* GitHubMyRepos.m in Sources */,
 				4E8A237219ABABDB000373DE /* ViewController.m in Sources */,
 				4EF8CBA319ABFD7D00E0A9C6 /* GitHubMyFollowers.m in Sources */,
