@@ -13,7 +13,7 @@
 @interface MyReposViewController ()<UITableViewDataSource>
 {
     GitHubController *gitHubController;
-    NSMutableArray *gitHubSearchResults;
+    NSMutableArray *gitHubResults;
     __weak IBOutlet UITableView *tableView;
 }
 @end
@@ -23,11 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    gitHubController = [[GitHubController alloc] init];
-    gitHubSearchResults = [[NSMutableArray alloc] init];
+    gitHubController = [GitHubController sharedController];
+    gitHubResults = [[NSMutableArray alloc] init];
     
-    [gitHubController fetchMyRepos:@"TOKEN" completion:^(NSMutableArray *results) {
-        gitHubSearchResults = results;
+    [gitHubController fetchMyRepos:^(NSMutableArray *results) {
+        gitHubResults = results;
         [tableView reloadData];
     }];
 }
@@ -38,13 +38,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return gitHubSearchResults.count;
+    return gitHubResults.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyReposCell"];
     
-    GitHubMyRepos *result = [gitHubSearchResults objectAtIndex:indexPath.row];
+    GitHubMyRepos *result = [gitHubResults objectAtIndex:indexPath.row];
     cell.textLabel.text = result.name;
     
     return cell;

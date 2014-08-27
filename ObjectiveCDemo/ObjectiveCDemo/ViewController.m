@@ -18,12 +18,16 @@
 @end
 
 @implementation ViewController
-            
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    gitHubController = [[GitHubController alloc] init];
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self setupEndpoints];
     [self setupSegues];
+    gitHubController = [GitHubController sharedController];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {

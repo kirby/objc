@@ -23,10 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    gitHubController = [[GitHubController alloc] init];
+    gitHubController = [GitHubController sharedController];
     gitHubSearchResults = [[NSMutableArray alloc] init];
     
-    [gitHubController fetchMyFollowers:@"TOKEN" completion:^(NSMutableArray *results) {
+    [gitHubController fetchMyFollowers:^(NSMutableArray *results) {
         gitHubSearchResults = results;
         [tableView reloadData];
     }];

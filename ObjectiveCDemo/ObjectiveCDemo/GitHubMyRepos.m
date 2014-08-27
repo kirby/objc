@@ -30,19 +30,22 @@
     NSMutableArray *results = [[NSMutableArray alloc] init];
     
     NSError *error = nil;
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
     
     if (!json) {
         NSLog(@"json parsing failed");
     }
     
-    if (![json isKindOfClass:[NSDictionary class]]) {
-        NSLog(@"top level is not a dictionary");
+    if (![json isKindOfClass:[NSArray class]]) {
+        NSLog(@"top level is not an array");
     }
     
-    NSArray *items = [json objectForKey:@"items"];
+//    NSLog(@"json = \n %@", json);
     
-    for (NSDictionary *item in items) {
+//    NSArray *items = [json objectAtIndex:0];
+    
+    for (NSDictionary *item in json) {
+        NSLog(@"item = \n %@", item);
         NSString *name = [item objectForKey:@"name"];
         NSString *desc = [item objectForKey:@"description"];
         NSString *html_url = [item objectForKey:@"html_url"];
@@ -51,7 +54,6 @@
         
         [results addObject:result];
     }
-    
     return results;
 }
 

@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    gitHubController = [[GitHubController alloc] init];
+    gitHubController = [GitHubController sharedController];
     gitHubSearchResults = [[NSMutableArray alloc] init];
     
     [gitHubController search:@"tetris" completion:^(NSMutableArray *results) {

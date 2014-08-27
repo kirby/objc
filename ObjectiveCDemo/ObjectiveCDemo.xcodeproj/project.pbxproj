@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584A419AD1B8A00E16E6C /* Constants.m */; };
 		4E8A236C19ABABDB000373DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236B19ABABDB000373DE /* main.m */; };
 		4E8A236F19ABABDB000373DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236E19ABABDB000373DE /* AppDelegate.m */; };
 		4E8A237219ABABDB000373DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A237119ABABDB000373DE /* ViewController.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E5584A419AD1B8A00E16E6C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		4E8A236619ABABDB000373DE /* ObjectiveCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8A236A19ABABDB000373DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8A236B19ABABDB000373DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		4E8A236819ABABDB000373DE /* ObjectiveCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4E8A237319ABABDB000373DE /* Main.storyboard */,
 				4E73B2E419AC063600EF4A56 /* Model */,
 				4EF8CBA519AC052800E0A9C6 /* MyRepos */,
 				4EF8CBA919AC054B00E0A9C6 /* MyFollowers */,
@@ -127,7 +130,6 @@
 				4E8A237119ABABDB000373DE /* ViewController.m */,
 				4E8A236919ABABDB000373DE /* Supporting Files */,
 				4E8A237619ABABDB000373DE /* Images.xcassets */,
-				4E8A237319ABABDB000373DE /* Main.storyboard */,
 				4E8A236D19ABABDB000373DE /* AppDelegate.h */,
 				4E8A236E19ABABDB000373DE /* AppDelegate.m */,
 			);
@@ -163,6 +165,8 @@
 		4E8A239219ABCF29000373DE /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				4EF8CBA419ABFED900E0A9C6 /* Constants.h */,
+				4E5584A419AD1B8A00E16E6C /* Constants.m */,
 				4E8A239319ABCFA8000373DE /* GitHubController.h */,
 				4E8A239419ABCFA8000373DE /* GitHubController.m */,
 				4E8A239619ABD1BC000373DE /* GitHubSearchResult.h */,
@@ -171,7 +175,6 @@
 				4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */,
 				4EF8CBA119ABFD7D00E0A9C6 /* GitHubMyFollowers.h */,
 				4EF8CBA219ABFD7D00E0A9C6 /* GitHubMyFollowers.m */,
-				4EF8CBA419ABFED900E0A9C6 /* Constants.h */,
 			);
 			name = GitHub;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */,
 				4EF8CBA819AC054300E0A9C6 /* MyReposViewController.m in Sources */,
 				4E8A239519ABCFA8000373DE /* GitHubController.m in Sources */,
 				4EF8CBAC19AC055E00E0A9C6 /* MyFollowersViewController.m in Sources */,

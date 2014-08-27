@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "GitHubController.h"
 
 @interface AppDelegate ()
+
+@property (strong,nonatomic) GitHubController *gitHubController;
 
 @end
 
@@ -17,6 +20,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+//    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+    
+    self.gitHubController = [GitHubController sharedController];
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    [self.gitHubController handleCallbackURL:url];
     return YES;
 }
 

@@ -10,11 +10,16 @@
 
 @interface GitHubController : NSObject
 
-@property (readonly) NSString *searchEndpoint;
+@property (strong, nonatomic) NSURLSession *session;
+@property (strong, nonatomic) NSString *token;
 
 -(id)init;
--(void)search:(NSString *)q completion:(void (^)(NSMutableArray *results))completion;
--(void)fetchMyRepos:(NSString *)token completion:(void (^)(NSMutableArray *results))completion;
--(void)fetchMyFollowers:(NSString *)token completion:(void (^)(NSMutableArray *results))completion;
++(GitHubController *)sharedController;
+
+-(void)handleCallbackURL:(NSURL *)url;
+
+-(void)search:(NSString *)query completion:(void (^)(NSMutableArray *results))completion;
+-(void)fetchMyRepos:(void (^)(NSMutableArray *results))completion;
+-(void)fetchMyFollowers:(void (^)(NSMutableArray *results))completion;
 
 @end
