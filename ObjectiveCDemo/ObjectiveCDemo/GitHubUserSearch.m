@@ -44,7 +44,7 @@
         NSString *login = [item objectForKey:@"login"];
         NSString *avatarURL = [item objectForKey:@"avatar_url"];
         
-        NSLog(@"%@", avatarURL);
+//        NSLog(@"%@", avatarURL);
         
         GitHubUserSearch *result = [[GitHubUserSearch alloc] initWith:login andAvatarURL:avatarURL];
         

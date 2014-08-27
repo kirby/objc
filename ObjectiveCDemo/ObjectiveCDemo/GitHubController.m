@@ -204,7 +204,6 @@
 
 -(void) fetchAvatar:(NSString *)avatarURL completion:(void (^)(UIImage *))completion {
     
-    NSLog(@"fetchAvatarWithURL %@", avatarURL);
     NSURL *url = [[NSURL alloc] initWithString:avatarURL];
     
     [[self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

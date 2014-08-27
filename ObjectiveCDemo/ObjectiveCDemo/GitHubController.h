@@ -16,7 +16,6 @@
 
 -(id) init;
 +(GitHubController *) sharedController;
-+(UIImage *) imageFromData:(NSData *)data;
 
 -(void) handleCallbackURL:(NSURL *)url;
 -(void) gitHubAuthentication;
