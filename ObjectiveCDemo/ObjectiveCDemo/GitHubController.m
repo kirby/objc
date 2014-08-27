@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "GitHubController.h"
 #import "GitHubSearchResult.h"
+#import "GitHubUserSearch.h"
 #import "GitHubMyRepos.h"
 
 @interface GitHubController ()
@@ -40,11 +41,15 @@
             // create the shared session object
             shared.session = [shared createSessionWithToken:token];
         } else {
-            NSString *urlString = [NSString stringWithFormat:kGitHubOAuthURL,kGitHubClientID,kGitHubCallbackURI,kGitHubScopes];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+            [shared performSelector:@selector(gitHubAuthentication) withObject:nil afterDelay:0.1f];
         }
     });
     return shared;
+}
+
+-(void)gitHubAuthentication {
+    NSString *urlString = [NSString stringWithFormat:kGitHubOAuthURL,kGitHubClientID,kGitHubCallbackURI,kGitHubScopes];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
 }
 
 -(void)handleCallbackURL:(NSURL *)url {
@@ -131,6 +136,26 @@
                 NSLog(@"Bad Status Code");
             } else {
                 completion([GitHubSearchResult parseWithData:data]);
+            }
+        }
+    }] resume];
+}
+
+-(void)searchUser:(NSString *)query completion:(void (^)(NSMutableArray *))completion {
+    
+    NSLog(@"searchUser: %@", query);
+    
+    NSURL *url = [[NSURL alloc] initWithString: [NSString stringWithFormat:kGitHubSearchUsersURL, query]];
+    
+    [[self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@", error.localizedDescription);
+        } else {
+            if ([(NSHTTPURLResponse *)response statusCode] != 200) {
+                NSLog(@"Bad Status Code");
+            } else {
+                completion([GitHubUserSearch parseWithData:data]);
             }
         }
     }] resume];

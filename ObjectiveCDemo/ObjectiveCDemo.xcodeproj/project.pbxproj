@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584A419AD1B8A00E16E6C /* Constants.m */; };
 		4E5584A819AE6B9F00E16E6C /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */; };
+		4E5584AC19AE6D3600E16E6C /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584AB19AE6D3600E16E6C /* UserCollectionViewCell.m */; };
+		4E5584AF19AE6EC600E16E6C /* GitHubUserSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5584AE19AE6EC600E16E6C /* GitHubUserSearch.m */; };
 		4E8A236C19ABABDB000373DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236B19ABABDB000373DE /* main.m */; };
 		4E8A236F19ABABDB000373DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A236E19ABABDB000373DE /* AppDelegate.m */; };
 		4E8A237219ABABDB000373DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A237119ABABDB000373DE /* ViewController.m */; };
@@ -38,6 +40,10 @@
 		4E5584A419AD1B8A00E16E6C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		4E5584A619AE6B9F00E16E6C /* SearchUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersViewController.h; sourceTree = "<group>"; };
 		4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
+		4E5584AA19AE6D3600E16E6C /* UserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewCell.h; sourceTree = "<group>"; };
+		4E5584AB19AE6D3600E16E6C /* UserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewCell.m; sourceTree = "<group>"; };
+		4E5584AD19AE6EC600E16E6C /* GitHubUserSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubUserSearch.h; sourceTree = "<group>"; };
+		4E5584AE19AE6EC600E16E6C /* GitHubUserSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubUserSearch.m; sourceTree = "<group>"; };
 		4E8A236619ABABDB000373DE /* ObjectiveCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectiveCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8A236A19ABABDB000373DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8A236B19ABABDB000373DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 		4E5584A919AE6BA400E16E6C /* SearchUsers */ = {
 			isa = PBXGroup;
 			children = (
+				4E5584AA19AE6D3600E16E6C /* UserCollectionViewCell.h */,
+				4E5584AB19AE6D3600E16E6C /* UserCollectionViewCell.m */,
 				4E5584A619AE6B9F00E16E6C /* SearchUsersViewController.h */,
 				4E5584A719AE6B9F00E16E6C /* SearchUsersViewController.m */,
 			);
@@ -184,6 +192,8 @@
 				4E8A239419ABCFA8000373DE /* GitHubController.m */,
 				4E8A239619ABD1BC000373DE /* GitHubSearchResult.h */,
 				4E8A239719ABD1BC000373DE /* GitHubSearchResult.m */,
+				4E5584AD19AE6EC600E16E6C /* GitHubUserSearch.h */,
+				4E5584AE19AE6EC600E16E6C /* GitHubUserSearch.m */,
 				4EF8CB9E19ABFD7100E0A9C6 /* GitHubMyRepos.h */,
 				4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */,
 				4EF8CBA119ABFD7D00E0A9C6 /* GitHubMyFollowers.h */,
@@ -319,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E5584A519AD1B8A00E16E6C /* Constants.m in Sources */,
+				4E5584AF19AE6EC600E16E6C /* GitHubUserSearch.m in Sources */,
 				4EF8CBA819AC054300E0A9C6 /* MyReposViewController.m in Sources */,
 				4E8A239519ABCFA8000373DE /* GitHubController.m in Sources */,
 				4EF8CBAC19AC055E00E0A9C6 /* MyFollowersViewController.m in Sources */,
@@ -327,6 +338,7 @@
 				4EF8CBA019ABFD7100E0A9C6 /* GitHubMyRepos.m in Sources */,
 				4E8A237219ABABDB000373DE /* ViewController.m in Sources */,
 				4EF8CBA319ABFD7D00E0A9C6 /* GitHubMyFollowers.m in Sources */,
+				4E5584AC19AE6D3600E16E6C /* UserCollectionViewCell.m in Sources */,
 				4E8A236F19ABABDB000373DE /* AppDelegate.m in Sources */,
 				4E8A236C19ABABDB000373DE /* main.m in Sources */,
 				4E8A239119ABC588000373DE /* SearchResultsViewController.m in Sources */,

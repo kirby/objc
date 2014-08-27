@@ -7,9 +7,18 @@
 //
 
 #import "SearchUsersViewController.h"
+#import "GitHubController.h"
+#import "GitHubUserSearch.h"
+#import "UserCollectionViewCell.h"
 
-@interface SearchUsersViewController ()
+@interface SearchUsersViewController () <UICollectionViewDataSource, UISearchBarDelegate>
+{
+    GitHubController *gitHubController;
+    NSMutableArray *gitHubResults;
+}
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -17,7 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.searchBar.delegate = self;
+    _collectionView.dataSource = self;
+    gitHubController = [GitHubController sharedController];
+    gitHubResults = [[NSMutableArray alloc] init];
+    
+    [gitHubController fetchMyRepos:^(NSMutableArray *results) {
+        gitHubResults = results;
+        [_collectionView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +42,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"searchBarSearchButtonClicked");
+    [gitHubController searchUser:searchBar.text completion:^(NSMutableArray *results) {
+        gitHubResults = results;
+        [_collectionView reloadData];
+     }];
 }
-*/
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return gitHubResults.count;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UserCell" forIndexPath:indexPath];
+    
+    GitHubUserSearch *result = [gitHubResults objectAtIndex:indexPath.row];
+    NSLog(@"cellForItemAtIndexPath %@", result.login);
+    
+    return cell;
+}
+
 
 @end
