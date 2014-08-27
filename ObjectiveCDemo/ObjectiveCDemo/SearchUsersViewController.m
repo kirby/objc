@@ -58,11 +58,11 @@
     
     GitHubUserSearch *result = [gitHubResults objectAtIndex:indexPath.row];
     cell.loginLabel.text = result.login;
+    
     [gitHubController fetchAvatar:result.avatarURL completion:^(UIImage *image) {
         cell.imageView.image = image;
         [cell setNeedsDisplay];
     }];
-//    NSLog(@"cellForItemAtIndexPath %@", result.login);
     
     return cell;
 }

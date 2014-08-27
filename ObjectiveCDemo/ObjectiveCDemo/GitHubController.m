@@ -135,7 +135,9 @@
             if ([(NSHTTPURLResponse *)response statusCode] != 200) {
                 NSLog(@"Bad Status Code");
             } else {
-                completion([GitHubSearchResult parseWithData:data]);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completion([GitHubSearchResult parseWithData:data]);
+                }];
             }
         }
     }] resume];
@@ -174,7 +176,9 @@
             if ([(NSHTTPURLResponse *)response statusCode] != 200) {
                 NSLog(@"Bad Status Code %@", response);
             } else {
-                completion([GitHubMyRepos parseWithData:data]);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completion([GitHubMyRepos parseWithData:data]);
+                }];
             }
         }
     }] resume];
@@ -211,7 +215,9 @@
             if ([(NSHTTPURLResponse *)response statusCode] != 200) {
                 NSLog(@"Bad Status Code %@", response);
             } else {
-                completion([UIImage imageWithData:data]);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completion([UIImage imageWithData:data]);
+                }];
             }
         }
     }] resume];
