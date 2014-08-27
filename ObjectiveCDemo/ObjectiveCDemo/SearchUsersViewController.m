@@ -31,10 +31,10 @@
     gitHubController = [GitHubController sharedController];
     gitHubResults = [[NSMutableArray alloc] init];
     
-    [gitHubController fetchMyRepos:^(NSMutableArray *results) {
-        gitHubResults = results;
-        [_collectionView reloadData];
-    }];
+//    [gitHubController fetchMyRepos:^(NSMutableArray *results) {
+//        gitHubResults = results;
+//        [_collectionView reloadData];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +43,6 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"searchBarSearchButtonClicked");
     [gitHubController searchUser:searchBar.text completion:^(NSMutableArray *results) {
         gitHubResults = results;
         [_collectionView reloadData];
@@ -58,7 +57,12 @@
     UserCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UserCell" forIndexPath:indexPath];
     
     GitHubUserSearch *result = [gitHubResults objectAtIndex:indexPath.row];
-    NSLog(@"cellForItemAtIndexPath %@", result.login);
+    cell.loginLabel.text = result.login;
+    [gitHubController fetchAvatar:result.avatarURL completion:^(UIImage *image) {
+        cell.imageView.image = image;
+        [cell setNeedsDisplay];
+    }];
+//    NSLog(@"cellForItemAtIndexPath %@", result.login);
     
     return cell;
 }

@@ -24,9 +24,7 @@
 }
 
 +(NSMutableArray *)parseWithData:(NSData *)data {
-    
-    //    NSLog(@"%@", data);
-    
+        
     NSMutableArray *results = [[NSMutableArray alloc] init];
     
     NSError *error = nil;
@@ -43,19 +41,15 @@
     NSArray *items = [json objectForKey:@"items"];
     
     for (NSDictionary *item in items) {
-        // NSLog(@"item = %@", item.description);
         NSString *login = [item objectForKey:@"login"];
         NSString *avatarURL = [item objectForKey:@"avatar_url"];
+        
+        NSLog(@"%@", avatarURL);
         
         GitHubUserSearch *result = [[GitHubUserSearch alloc] initWith:login andAvatarURL:avatarURL];
         
         [results addObject:result];
     }
-    
-    //    for (GitHubSearchResult *result in results) {
-    //        NSLog(@"%@ %@ %@", result.gitHubID, result.name, result.desc);
-    //    }
-    
     return results;
 }
 

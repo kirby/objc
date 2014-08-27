@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GitHubController : NSObject
 
@@ -15,6 +16,7 @@
 
 -(id) init;
 +(GitHubController *) sharedController;
++(UIImage *) imageFromData:(NSData *)data;
 
 -(void) handleCallbackURL:(NSURL *)url;
 -(void) gitHubAuthentication;
@@ -23,5 +25,7 @@
 -(void) searchUser:(NSString *)query completion:(void (^)(NSMutableArray *results))completion;
 -(void) fetchMyRepos:(void (^)(NSMutableArray *results))completion;
 -(void) fetchMyFollowers:(void (^)(NSMutableArray *results))completion;
+
+-(void) fetchAvatar:(NSString *)avatarURL completion:(void (^)(UIImage *image))completion;
 
 @end

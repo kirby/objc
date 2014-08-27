@@ -155,7 +155,9 @@
             if ([(NSHTTPURLResponse *)response statusCode] != 200) {
                 NSLog(@"Bad Status Code");
             } else {
-                completion([GitHubUserSearch parseWithData:data]);
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    completion([GitHubUserSearch parseWithData:data]);
+                }];
             }
         }
     }] resume];
@@ -180,8 +182,7 @@
 
 -(void)fetchMyFollowers:(void (^)(NSMutableArray *))completion {
 //    NSURL *url = [[NSURL alloc] initWithString:_searchEndpoint];
-    
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+
 //    
 //    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 //        
@@ -196,5 +197,25 @@
 //        }
 //    }] resume];
 }
+
+-(void) fetchAvatar:(NSString *)avatarURL completion:(void (^)(UIImage *))completion {
+    
+    NSLog(@"fetchAvatarWithURL %@", avatarURL);
+    NSURL *url = [[NSURL alloc] initWithString:avatarURL];
+    
+    [[self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@", error.localizedDescription);
+        } else {
+            if ([(NSHTTPURLResponse *)response statusCode] != 200) {
+                NSLog(@"Bad Status Code %@", response);
+            } else {
+                completion([UIImage imageWithData:data]);
+            }
+        }
+    }] resume];
+}
+
 
 @end
