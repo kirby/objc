@@ -32,6 +32,9 @@ extern NSString * const kGitHubSearchUsersURL;
 
 extern NSString * const kGitHubReposURL;
 
+extern NSString * const kGitHubCreateRepoURL;
+extern NSString * const kGitHubCreateRepoJSON;
+
 @end
 
 #endif

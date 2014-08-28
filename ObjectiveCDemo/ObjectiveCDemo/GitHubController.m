@@ -107,13 +107,13 @@
 
 -(NSURLSession *) createSessionWithToken:(NSString *)token {
 
-    NSLog(@"token = %@", token);
+//    NSLog(@"token = %@", token);
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     NSDictionary *headerDictionary = @{
        kGitHubAuthorizationHeader : [NSString stringWithFormat:kGitHubAuthorizationHeaderValue, token]};
     
-    NSLog(@"headerDictionrary %@", headerDictionary);
+//    NSLog(@"headerDictionrary %@", headerDictionary);
     [configuration setHTTPAdditionalHeaders:headerDictionary];
     
     return [NSURLSession sessionWithConfiguration:configuration];
@@ -145,7 +145,7 @@
 
 -(void)searchUser:(NSString *)query completion:(void (^)(NSMutableArray *))completion {
     
-    NSLog(@"searchUser: %@", query);
+//    NSLog(@"searchUser: %@", query);
     
     NSURL *url = [[NSURL alloc] initWithString: [NSString stringWithFormat:kGitHubSearchUsersURL, query]];
     
@@ -220,6 +220,82 @@
             }
         }
     }] resume];
+}
+
+-(void) createRepo:(GitHubCreateRepo *)repo completion:(void (^)(NSMutableArray *results))completion {
+    
+    NSURL *url = [[NSURL alloc] initWithString:kGitHubCreateRepoURL];
+    
+    // convert the repo instance into a JSON string
+    NSString *payloadString =
+        [[NSString alloc] initWithString:
+            [NSString stringWithFormat: kGitHubCreateRepoJSON,
+                repo.name,
+                repo.desc,
+                repo.scope,
+                repo.initialize]];
+    
+    NSLog(@"%@", payloadString);
+    
+    // convert urlString to data
+    NSData *payloadData = [payloadString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    
+    NSString *bytes = [NSString stringWithFormat:@"%lu", (unsigned long)[payloadData length]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kGitHubCreateRepoURL]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:bytes forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:payloadData];
+    
+    [[self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@", error.localizedDescription);
+        } else {
+            if ([(NSHTTPURLResponse *)response statusCode] != 200) {
+                NSLog(@"Bad Status Code %@", response);
+            } else {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                    completion([UIImage imageWithData:data]);
+                    
+                     NSMutableArray *results = [[NSMutableArray alloc] init];
+                     
+                     NSError *error = nil;
+                     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                    
+                    NSLog(@"%@", json);
+                     
+                     if (!json) {
+                     NSLog(@"json parsing failed");
+                     }
+                     
+                     if (![json isKindOfClass:[NSDictionary class]]) {
+                     NSLog(@"top level is not a dictionary");
+                     }
+                    
+                     /*
+                     NSArray *items = [json objectForKey:@"items"];
+                     
+                     for (NSDictionary *item in items) {
+                     NSString *login = [item objectForKey:@"login"];
+                     NSString *avatarURL = [item objectForKey:@"avatar_url"];
+                     NSString *htmlURL = [item objectForKey:@"html_url"];
+                     
+                     GitHubUserSearch *result = [[GitHubUserSearch alloc] initWith:login andAvatarURL:avatarURL andHtmlURL:htmlURL];
+                     
+                     [results addObject:result];
+                     }
+                     return results;
+                     }
+                     */
+                    
+                }];
+            }
+        }
+    }] resume];
+    
 }
 
 

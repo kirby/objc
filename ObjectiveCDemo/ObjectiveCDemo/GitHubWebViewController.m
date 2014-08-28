@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Worxly. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "GitHubWebViewController.h"
 
 @interface GitHubWebViewController ()
@@ -23,9 +24,15 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:_webView.frame];
+    [_webView removeFromSuperview];
+    
+    [self.view addSubview:webView];
+    
     NSURL *githuburl = [NSURL URLWithString:_url];
     NSURLRequest *request = [NSURLRequest requestWithURL:githuburl];
-    [_webView loadRequest:request];
+    [webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {

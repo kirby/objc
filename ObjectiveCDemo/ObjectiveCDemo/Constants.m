@@ -31,6 +31,20 @@ NSString * const kGitHubSearchUsersURL = @"https://api.github.com/search/users?q
 
 NSString * const kGitHubReposURL = @"https://api.github.com/user/repos";
 
+NSString * const kGitHubCreateRepoURL = @"https://api.github.com/user/repos";
+NSString * const kGitHubCreateRepoJSON = @"{\"name\": \"%@\", \"description\": \"%@\", \"private\": %@, \"auto_init\": %@}";
+
+/*
+ 
+ {
+ "name": "Hello-World",
+ "description": "This is your first repository",
+ "private": false,
+ "auto_init": false
+ }
+ 
+ */
+
 @implementation Constants
 
 @end

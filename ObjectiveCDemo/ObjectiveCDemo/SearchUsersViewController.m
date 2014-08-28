@@ -78,33 +78,18 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"ShowGitHubWeb" sender:self];
+    [self performSegueWithIdentifier:@"ShowGitHubWeb" sender:indexPath];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    GitHubUserSearch *user = [gitHubResults objectAtIndex:indexPath.row];
     
     GitHubWebViewController *vc = segue.destinationViewController;
-//    UserCollectionViewCell *selectedCell = (UserCollectionViewCell *)sender;
     
     NSArray *items = [_collectionView indexPathsForSelectedItems];
     NSIndexPath *ip = items[0];
-    NSLog(@"items.count = %lu", (unsigned long)items.count);
-//    
-//    UserCollectionViewCell *selectedCell = items.firstObject;
-//    
-//    NSIndexPath *indexPath = [_collectionView indexPathForCell:selectedCell];
     
     GitHubUserSearch *user = [gitHubResults objectAtIndex:ip.row];
     vc.url = user.htmlURL;
-    
-    /*
-        let photoVC = segue.destinationViewController as PhotoViewController
-        var selectedCell = sender as PhotoCell
-        var indexPath = self.collectionView.indexPathForCell(selectedCell)
-        photoVC.asset = self.photoAssets![indexPath.item] as PHAsset
-     */
-    
 }
 
 @end

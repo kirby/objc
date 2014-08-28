@@ -45,7 +45,7 @@
 //    NSArray *items = [json objectAtIndex:0];
     
     for (NSDictionary *item in json) {
-        NSLog(@"item = \n %@", item);
+      //  NSLog(@"item = \n %@", item);
         NSString *name = [item objectForKey:@"name"];
         NSString *desc = [item objectForKey:@"description"];
         NSString *html_url = [item objectForKey:@"html_url"];

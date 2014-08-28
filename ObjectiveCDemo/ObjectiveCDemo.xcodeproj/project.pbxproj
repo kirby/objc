@@ -21,6 +21,8 @@
 		4E8A239519ABCFA8000373DE /* GitHubController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A239419ABCFA8000373DE /* GitHubController.m */; };
 		4E8A239819ABD1BC000373DE /* GitHubSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A239719ABD1BC000373DE /* GitHubSearchResult.m */; };
 		4EBE64D819AE9B3A00AC8015 /* GitHubWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE64D719AE9B3A00AC8015 /* GitHubWebViewController.m */; };
+		4EBE64DB19AFC03400AC8015 /* GitHubCreateRepo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE64DA19AFC03400AC8015 /* GitHubCreateRepo.m */; };
+		4EBE64DE19AFCB7A00AC8015 /* AddRepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBE64DD19AFCB7A00AC8015 /* AddRepoViewController.m */; };
 		4EF8CBA019ABFD7100E0A9C6 /* GitHubMyRepos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */; };
 		4EF8CBA319ABFD7D00E0A9C6 /* GitHubMyFollowers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CBA219ABFD7D00E0A9C6 /* GitHubMyFollowers.m */; };
 		4EF8CBA819AC054300E0A9C6 /* MyReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8CBA719AC054300E0A9C6 /* MyReposViewController.m */; };
@@ -66,6 +68,10 @@
 		4E8A239719ABD1BC000373DE /* GitHubSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubSearchResult.m; sourceTree = "<group>"; };
 		4EBE64D619AE9B3A00AC8015 /* GitHubWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubWebViewController.h; sourceTree = "<group>"; };
 		4EBE64D719AE9B3A00AC8015 /* GitHubWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubWebViewController.m; sourceTree = "<group>"; };
+		4EBE64D919AFC03400AC8015 /* GitHubCreateRepo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubCreateRepo.h; sourceTree = "<group>"; };
+		4EBE64DA19AFC03400AC8015 /* GitHubCreateRepo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubCreateRepo.m; sourceTree = "<group>"; };
+		4EBE64DC19AFCB7A00AC8015 /* AddRepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRepoViewController.h; sourceTree = "<group>"; };
+		4EBE64DD19AFCB7A00AC8015 /* AddRepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRepoViewController.m; sourceTree = "<group>"; };
 		4EF8CB9E19ABFD7100E0A9C6 /* GitHubMyRepos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubMyRepos.h; sourceTree = "<group>"; };
 		4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitHubMyRepos.m; sourceTree = "<group>"; };
 		4EF8CBA119ABFD7D00E0A9C6 /* GitHubMyFollowers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitHubMyFollowers.h; sourceTree = "<group>"; };
@@ -203,6 +209,8 @@
 				4EF8CB9F19ABFD7100E0A9C6 /* GitHubMyRepos.m */,
 				4EF8CBA119ABFD7D00E0A9C6 /* GitHubMyFollowers.h */,
 				4EF8CBA219ABFD7D00E0A9C6 /* GitHubMyFollowers.m */,
+				4EBE64D919AFC03400AC8015 /* GitHubCreateRepo.h */,
+				4EBE64DA19AFC03400AC8015 /* GitHubCreateRepo.m */,
 			);
 			name = GitHub;
 			sourceTree = "<group>";
@@ -221,6 +229,8 @@
 			children = (
 				4EF8CBA619AC054300E0A9C6 /* MyReposViewController.h */,
 				4EF8CBA719AC054300E0A9C6 /* MyReposViewController.m */,
+				4EBE64DC19AFCB7A00AC8015 /* AddRepoViewController.h */,
+				4EBE64DD19AFCB7A00AC8015 /* AddRepoViewController.m */,
 			);
 			name = MyRepos;
 			sourceTree = "<group>";
@@ -343,6 +353,8 @@
 				4E5584A819AE6B9F00E16E6C /* SearchUsersViewController.m in Sources */,
 				4EF8CBA019ABFD7100E0A9C6 /* GitHubMyRepos.m in Sources */,
 				4E8A237219ABABDB000373DE /* ViewController.m in Sources */,
+				4EBE64DE19AFCB7A00AC8015 /* AddRepoViewController.m in Sources */,
+				4EBE64DB19AFC03400AC8015 /* GitHubCreateRepo.m in Sources */,
 				4EF8CBA319ABFD7D00E0A9C6 /* GitHubMyFollowers.m in Sources */,
 				4E5584AC19AE6D3600E16E6C /* UserCollectionViewCell.m in Sources */,
 				4E8A236F19ABABDB000373DE /* AppDelegate.m in Sources */,

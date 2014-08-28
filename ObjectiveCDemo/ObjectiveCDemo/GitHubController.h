@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "GitHubCreateRepo.h"
+
 @interface GitHubController : NSObject
 
 @property (strong, nonatomic) NSURLSession *session;
@@ -26,5 +28,7 @@
 -(void) fetchMyFollowers:(void (^)(NSMutableArray *results))completion;
 
 -(void) fetchAvatar:(NSString *)avatarURL completion:(void (^)(UIImage *image))completion;
+
+-(void) createRepo:(GitHubCreateRepo *)repo completion:(void (^)(NSMutableArray *results))completion;
 
 @end
