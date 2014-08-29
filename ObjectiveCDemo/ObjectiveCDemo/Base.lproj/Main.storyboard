@@ -256,57 +256,45 @@
                                     <segment title="No"/>
                                 </segments>
                             </segmentedControl>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXI-rm-hI3">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39b-2p-Ply">
+                                <rect key="frame" x="277" y="520" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Bf2-2Q-xwK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="QHF-4a-0iN"/>
+                                    <constraint firstAttribute="height" constant="30" id="5a8-nS-h6a"/>
+                                    <constraint firstAttribute="width" constant="46" id="tyU-4r-4DM"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem systemItem="save" id="qtM-1M-vUE">
-                                        <connections>
-                                            <action selector="saveRepoButton:" destination="vbH-eU-M3J" id="CXa-Nu-MyM"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="QHF-4a-0iN"/>
-                                    </mask>
-                                </variation>
-                            </toolbar>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveRepoButton:" destination="vbH-eU-M3J" eventType="touchUpInside" id="Nw5-qn-RMj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1ke-BA-poj" firstAttribute="top" secondItem="teI-RK-Qzu" secondAttribute="bottom" constant="8" id="1f0-Av-mSF"/>
-                            <constraint firstAttribute="bottom" secondItem="AXI-rm-hI3" secondAttribute="bottom" id="2aZ-kH-R8V"/>
-                            <constraint firstItem="AXI-rm-hI3" firstAttribute="top" secondItem="god-Eo-jKh" secondAttribute="bottom" id="3lK-yU-nGT"/>
                             <constraint firstItem="dvf-eS-VDX" firstAttribute="top" secondItem="3Sm-lJ-GdV" secondAttribute="bottom" constant="11" id="54h-eJ-8KG"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="leading" secondItem="teI-RK-Qzu" secondAttribute="leading" id="6OL-OD-RIP"/>
                             <constraint firstAttribute="trailing" secondItem="Mby-WU-4gs" secondAttribute="trailing" constant="20" symbolic="YES" id="C7U-tT-4nZ"/>
-                            <constraint firstItem="AXI-rm-hI3" firstAttribute="leading" secondItem="efP-Y4-8aj" secondAttribute="leading" symbolic="YES" id="Cjm-gV-uNM"/>
+                            <constraint firstAttribute="bottom" secondItem="39b-2p-Ply" secondAttribute="bottom" constant="50" id="Cl9-dk-jPd"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="leading" secondItem="mCX-fg-ava" secondAttribute="leading" id="DHH-x2-ljq"/>
-                            <constraint firstItem="AXI-rm-hI3" firstAttribute="leading" secondItem="efP-Y4-8aj" secondAttribute="leading" id="GyK-6a-hh2"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="leading" secondItem="hA1-lb-Ay3" secondAttribute="leading" id="I6j-2R-v8X"/>
                             <constraint firstItem="mCX-fg-ava" firstAttribute="top" secondItem="dvf-eS-VDX" secondAttribute="bottom" constant="8" id="McP-PE-ohj"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="leading" secondItem="dvf-eS-VDX" secondAttribute="leading" id="Pw1-XX-wHi"/>
                             <constraint firstItem="Mby-WU-4gs" firstAttribute="trailing" secondItem="ZsD-tm-Tb8" secondAttribute="trailing" id="Tug-5B-pgo"/>
-                            <constraint firstAttribute="trailing" secondItem="AXI-rm-hI3" secondAttribute="trailing" id="VAh-pc-2Jp"/>
-                            <constraint firstAttribute="bottom" secondItem="AXI-rm-hI3" secondAttribute="bottom" id="ZD0-aa-uNG"/>
-                            <constraint firstItem="AXI-rm-hI3" firstAttribute="top" secondItem="god-Eo-jKh" secondAttribute="bottom" id="aEA-oI-4vh"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="top" secondItem="teI-RK-Qzu" secondAttribute="bottom" constant="8" id="aSi-q3-AJf"/>
                             <constraint firstItem="Mby-WU-4gs" firstAttribute="trailing" secondItem="sXq-6G-UQL" secondAttribute="trailing" id="aUf-Aa-hfy"/>
                             <constraint firstItem="teI-RK-Qzu" firstAttribute="top" secondItem="ZsD-tm-Tb8" secondAttribute="bottom" constant="8" id="baV-GU-aiQ"/>
                             <constraint firstItem="Mby-WU-4gs" firstAttribute="top" secondItem="3Sm-lJ-GdV" secondAttribute="bottom" constant="8" id="cd2-cX-6OA"/>
                             <constraint firstItem="Mby-WU-4gs" firstAttribute="trailing" secondItem="1ke-BA-poj" secondAttribute="trailing" id="elC-yz-oO6"/>
                             <constraint firstItem="ZsD-tm-Tb8" firstAttribute="top" secondItem="mCX-fg-ava" secondAttribute="bottom" constant="8" symbolic="YES" id="hqU-wd-pFt"/>
-                            <constraint firstAttribute="trailing" secondItem="AXI-rm-hI3" secondAttribute="trailing" symbolic="YES" id="k9e-jh-oNA"/>
                             <constraint firstItem="hA1-lb-Ay3" firstAttribute="top" secondItem="1ke-BA-poj" secondAttribute="bottom" constant="8" id="l7B-95-FTy"/>
                             <constraint firstItem="1ke-BA-poj" firstAttribute="leading" secondItem="ZsD-tm-Tb8" secondAttribute="leading" id="lI0-jq-wHO"/>
                             <constraint firstItem="sXq-6G-UQL" firstAttribute="top" secondItem="1ke-BA-poj" secondAttribute="bottom" constant="8" symbolic="YES" id="pxO-TY-tqV"/>
                             <constraint firstItem="dvf-eS-VDX" firstAttribute="leading" secondItem="efP-Y4-8aj" secondAttribute="leading" constant="20" symbolic="YES" id="qmx-jF-hmt"/>
+                            <constraint firstAttribute="centerX" secondItem="39b-2p-Ply" secondAttribute="centerX" id="qnl-nX-NrY"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <connections>
                         <outlet property="autoInitSegement" destination="sXq-6G-UQL" id="j8g-zi-IHa"/>
                         <outlet property="repoDescriptionTextView" destination="1ke-BA-poj" id="sAB-qr-59I"/>

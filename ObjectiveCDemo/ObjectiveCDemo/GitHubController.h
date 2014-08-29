@@ -29,6 +29,6 @@
 
 -(void) fetchAvatar:(NSString *)avatarURL completion:(void (^)(UIImage *image))completion;
 
--(void) createRepo:(GitHubCreateRepo *)repo completion:(void (^)(NSMutableArray *results))completion;
+-(void) createRepo:(GitHubCreateRepo *)repo completion:(void (^)(BOOL result))completion;
 
 @end
